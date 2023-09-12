@@ -13,7 +13,8 @@ const createTask = (evento) =>  {
     const content = `<div>
                     <i class="far fa-check-square icon"></i>
                     <span class="task">${value}</span>
-                    </div>`
+                    </div>
+                    <i class="fas fa-trash-alt trashIcon icon"></i>`
     task.innerHTML = content
 
     list.appendChild(task)
