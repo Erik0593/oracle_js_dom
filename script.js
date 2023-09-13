@@ -20,13 +20,13 @@ const createTask = (evento) =>  {
     taskContent.appendChild(titleTask)
 
 
-    const content = `<i class="fas fa-trash-alt trashIcon icon"></i>`
     // task.innerHTML = content
 
     
     task.appendChild(taskContent)
+    task.appendChild(deleteBtn())
     list.appendChild(task)
-    console.log(content)
+    // console.log(content)
 } 
 
 btn.addEventListener("click", createTask)
@@ -36,6 +36,21 @@ const checkComplete = () => {
     i.classList.add('far','fa-check-square','icon')
     i.addEventListener("click", completeTask)
     return i
+}
+
+
+
+const deleteBtn = () => {
+    const i = document.createElement('i')
+    i.classList.add('fas', 'fa-trash-alt', 'trashIcon', 'icon')
+    i.addEventListener('click', deleteTask)
+
+    return i 
+}
+
+const deleteTask = (event) => {
+    const padre = event.target.parentElement
+    padre.remove()
 }
 
 const completeTask = (event) => {
